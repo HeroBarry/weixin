@@ -39,34 +39,36 @@
     <taglibs-version>1.1.2</taglibs-version>
     <freemarker-version>2.3.23</freemarker-version>
     <poi.version>3.15</poi.version>
-
+    <qiniu-version>[7.2.0, 7.2.99]</qiniu-version>
+    <aliyun-oss-version>2.5.0</aliyun-oss-version>
+    <qcloud-cos-version>4.4</qcloud-cos-version>
     <swagger.version>2.4.0</swagger.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-mp</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-mp</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-qy</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-qy</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-open</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-open</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-pay</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-pay</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-app</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-app</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
 
@@ -306,6 +308,58 @@
       <artifactId>poi-ooxml-schemas</artifactId>
       <version>${poi.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.qiniu</groupId>
+      <artifactId>qiniu-java-sdk</artifactId>
+      <version>${qiniu-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.aliyun.oss</groupId>
+      <artifactId>aliyun-sdk-oss</artifactId>
+      <version>${aliyun-oss-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.qcloud</groupId>
+      <artifactId>cos_api</artifactId>
+      <version>${qcloud-cos-version}</version>
+    </dependency>
   </dependencies>
 
+  <build>
+    <finalName>ssm-app</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${java-version}</source>
+          <target>${java-version}</target>
+          <!-- true:跳过测试 -->
+          <skip>true</skip>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+          <include>**/*.js</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+  </build>
 </project>
+

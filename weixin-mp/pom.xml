@@ -50,28 +50,28 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-mp</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-mp</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-qy</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-qy</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-open</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-open</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-pay</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-pay</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.riversoft.weixin</groupId>
-      <artifactId>sdk-app</artifactId>
+      <groupId>com.dmd.weixin</groupId>
+      <artifactId>weixin-sdk-app</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>
 

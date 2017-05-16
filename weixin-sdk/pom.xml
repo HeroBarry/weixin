@@ -2,19 +2,18 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.riversoft.weixin</groupId>
+  <groupId>com.dmd.weixin</groupId>
   <artifactId>weixin-sdk</artifactId>
   <version>1.0.0</version>
   <modules>
-    <module>sdk-common</module>
-    <module>sdk-open</module>
-    <module>sdk-pay</module>
-    <module>sdk-mp</module>
-    <module>sdk-qy</module>
-    <module>sdk-app</module>
+    <module>weixin-sdk-common</module>
+    <module>weixin-sdk-open</module>
+    <module>weixin-sdk-pay</module>
+    <module>weixin-sdk-mp</module>
+    <module>weixin-sdk-qy</module>
+    <module>weixin-sdk-app</module>
   </modules>
   <packaging>pom</packaging>
-
 
   <properties>
     <jdk.version>1.7</jdk.version>
