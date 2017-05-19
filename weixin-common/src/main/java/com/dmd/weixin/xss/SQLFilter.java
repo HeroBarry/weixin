@@ -1,6 +1,7 @@
 package com.dmd.weixin.xss;
 
-import io.renren.utils.RRException;
+
+import com.dmd.weixin.utils.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**

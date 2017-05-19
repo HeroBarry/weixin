@@ -7,7 +7,6 @@ import com.dmd.weixin.utils.Query;
 import com.dmd.weixin.utils.R;
 import com.dmd.weixin.xss.XssHttpServletRequestWrapper;
 import org.apache.commons.io.IOUtils;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,17 +27,20 @@ import java.util.Map;
  * @date 2016年12月19日 下午9:12:58
  */
 @Controller
-@RequestMapping("/sys/generator")
+@RequestMapping("/generator")
 public class SysGeneratorController {
 	@Autowired
 	private SysGeneratorService sysGeneratorService;
-	
+
+	@RequestMapping("/index")
+	public String index(){
+		return "sys/index.html";
+	}
 	/**
 	 * 列表
 	 */
 	@ResponseBody
 	@RequestMapping("/list")
-	@RequiresPermissions("sys:generator:list")
 	public R list(@RequestParam Map<String, Object> params){
 		//查询列表数据
 		Query query = new Query(params);
@@ -54,7 +56,6 @@ public class SysGeneratorController {
 	 * 生成代码
 	 */
 	@RequestMapping("/code")
-	@RequiresPermissions("sys:generator:code")
 	public void code(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String[] tableNames = new String[]{};
 		//获取表名，不进行xss过滤
