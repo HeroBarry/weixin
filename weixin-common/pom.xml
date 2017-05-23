@@ -41,10 +41,22 @@
     <qiniu-version>[7.2.0, 7.2.99]</qiniu-version>
     <aliyun-oss-version>2.5.0</aliyun-oss-version>
     <qcloud-cos-version>4.4</qcloud-cos-version>
+    <quartz-version>2.2.3</quartz-version>
     <swagger.version>2.4.0</swagger.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>${quartz-version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>c3p0</artifactId>
+          <groupId>c3p0</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
     <dependency>
       <groupId>io.springfox</groupId>
       <artifactId>springfox-swagger2</artifactId>
