@@ -5,6 +5,25 @@
 基于Spring+SpringMVC+Mybatis敏捷开发系统架构，模块分为：SDK、基础框架（common）、订阅号、企业号、小程序、后台管理代码生成器，努力打造一款开源且好用的JEE微信快速开发框架。
 SDK采用开源：https://github.com/borball/weixin-sdk  API使用指南:https://github.com/borball/weixin-sdk/wiki  
 
+### 组织架构
+暂时不写
+
+### 技术选型
+#### 前端技术
+等待编写
+#### 后台技术
+等待编写
+
+### 架构图
+等待上传
+
+### 模块依赖
+等待上传
+
+### 模块介绍
+等待编写
+
+
 ## 环境搭建
 
 #### 开发工具:
