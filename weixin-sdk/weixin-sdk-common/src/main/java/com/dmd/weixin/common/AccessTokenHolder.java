@@ -28,7 +28,12 @@ public abstract class AccessTokenHolder {
     private String clientSecret;
     private String tokenUrl;
     private CloseableHttpClient httpClient;
-
+    /**
+     * AccessToken 获取
+     * @param tokenUrl 获取地址
+     * @param clientId app id
+     * @param clientSecret app secret
+     */
     public AccessTokenHolder(String tokenUrl, String clientId, String clientSecret) {
         this.tokenUrl = tokenUrl;
         this.clientId = clientId;

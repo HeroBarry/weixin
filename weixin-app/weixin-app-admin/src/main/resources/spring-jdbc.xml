@@ -60,7 +60,7 @@
 		<property name="patterns">
 			<list>
 				<value>com.dmd.weixin.app.controller.*</value>
-				<value>com.dmd.weixin.app.service.*</value>
+				<value>com.dmd.weixin.service.*</value>
 			</list>
 		</property>
 	</bean>
@@ -81,6 +81,6 @@
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.dmd.weixin.app.dao" />
+		<property name="basePackage" value="com.dmd.weixin.dao" />
 	</bean>
 </beans>

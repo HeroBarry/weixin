@@ -57,21 +57,6 @@
 
     <dependency>
       <groupId>com.dmd.weixin</groupId>
-      <artifactId>weixin-sdk-mp</artifactId>
-      <version>${weixin-sdk.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.dmd.weixin</groupId>
-      <artifactId>weixin-sdk-qy</artifactId>
-      <version>${weixin-sdk.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.dmd.weixin</groupId>
-      <artifactId>weixin-sdk-open</artifactId>
-      <version>${weixin-sdk.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.dmd.weixin</groupId>
       <artifactId>weixin-sdk-pay</artifactId>
       <version>${weixin-sdk.version}</version>
     </dependency>

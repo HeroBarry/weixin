@@ -1,9 +1,9 @@
 <AppSetting>
-    <appId>wx122233344555555</appId>
-    <secret>zzzzzzzzzzzzzzzzzzz</secret>
-    <token>xxxxxxxxxxxxxxxx</token>
+    <appId>wxc8fb2ed895fabd4f</appId>
+    <secret>89ed15a57236cf31b96cd883cb179d65</secret>
+    <token>w96WrOTie1rUIGGPZFP0BNl-LQbel84VLW1HQHpubsN34Aq8MEjiAW6vQj4Hj8plwLoMbMN5ypt3-5D7l_a74Lq0nULEUX180kI0MlpzGVLnTlts9SAb9VW-RcuTgOF7BTWcAEAUMP</token>
     <aesKey>tttttttttttttttttttttttttttttttt</aesKey>
-    <!-- 可以指定自己的tokenHolderClass，继承与com.riversoft.weixin.common.AccessTokenHolder
-    <tokenHolderClass>com.abc.Abc</tokenHolderClass>
-    -->
+    <!-- 可以指定自己的tokenHolderClass，继承与com.riversoft.weixin.common.AccessTokenHolder-->
+    <tokenHolderClass>com.dmd.weixin.common.DefaultAccessTokenHolder</tokenHolderClass>
+
 </AppSetting>

@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/api")
-@Api("登录接口")
+@Api(value = "小程序回调控制器", description = "小程序回调")
 public class WxCallbackController {
 
     private static Logger logger = LoggerFactory.getLogger(WxCallbackController.class);
@@ -28,20 +28,16 @@ public class WxCallbackController {
     @Autowired
     private DefaultDuplicatedMessageChecker duplicatedMessageChecker;
 
-/*    public void setDuplicatedMessageChecker(DuplicatedMessageChecker duplicatedMessageChecker) {
-        this.duplicatedMessageChecker = duplicatedMessageChecker;
-    }*/
-
     /**
      * 小程序回调接口
      *
-     * @param signature
-     * @param msg_signature
-     * @param timestamp
-     * @param nonce
-     * @param echostr
-     * @param encrypt_type
-     * @param content
+     * @param signature 微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。
+     * @param msg_signature 签名信息
+     * @param timestamp 时间戳
+     * @param nonce 随机数
+     * @param echostr 随机字符串
+     * @param encrypt_type 加密类型
+     * @param content 内容
      * @return
      */
     @GetMapping("/wx/app")
@@ -86,6 +82,7 @@ public class WxCallbackController {
 
         return "";
     }
+
 
     /**
      * 具体业务逻辑
