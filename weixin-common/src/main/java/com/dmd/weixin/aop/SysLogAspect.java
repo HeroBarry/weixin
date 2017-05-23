@@ -33,7 +33,7 @@ public class SysLogAspect {
 	@Autowired
 	private SysLogService sysLogService;
 	
-	@Pointcut("@annotation(io.renren.annotation.SysLog)") 
+	@Pointcut("@annotation(com.dmd.weixin.annotation.SysLog)")
 	public void logPointCut() { 
 		
 	}
