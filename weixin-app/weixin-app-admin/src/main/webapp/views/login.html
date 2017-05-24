@@ -6,13 +6,14 @@
   <title>人人权限系统</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="statics/css/bootstrap.min.css">
-  <link rel="stylesheet" href="statics/css/font-awesome.min.css">
-  <link rel="stylesheet" href="statics/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="${rc.contextPath}/vender/css/bootstrap.min.css">
+  <link rel="stylesheet" href="${rc.contextPath}/vender/css/font-awesome.min.css">
+  <link rel="stylesheet" href="${rc.contextPath}/vender/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="statics/css/all-skins.min.css">
-  <link rel="stylesheet" href="statics/css/main.css">
+  <link rel="stylesheet" href="${rc.contextPath}/vender/css/all-skins.min.css">
+  <!--<link rel="stylesheet" href="../css/css/main.css">-->
+  <link rel="stylesheet" href="${rc.contextPath}/css/css/main.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -66,12 +67,12 @@
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
-<script src="statics/libs/jquery.min.js"></script>
-<script src="statics/libs/vue.min.js"></script>
-<script src="statics/libs/bootstrap.min.js"></script>
-<script src="statics/libs/jquery.slimscroll.min.js"></script>
-<script src="statics/libs/fastclick.min.js"></script>
-<script src="statics/libs/app.js"></script>
+<script src="${rc.contextPath}/vender/libs/jquery.min.js"></script>
+<script src="${rc.contextPath}/vender/libs/vue.min.js"></script>
+<script src="${rc.contextPath}/vender/libs/bootstrap.min.js"></script>
+<script src="${rc.contextPath}/vender/libs/jquery.slimscroll.min.js"></script>
+<script src="${rc.contextPath}/vender/libs/fastclick.min.js"></script>
+<script src="${rc.contextPath}/vender/libs/app.js"></script>
 <script type="text/javascript">
 var vm = new Vue({
 	el:'#rrapp',
@@ -94,6 +95,7 @@ var vm = new Vue({
 		},
 		login: function (event) {
 			var data = "username="+vm.username+"&password="+vm.password+"&captcha="+vm.captcha;
+			console.log(data);
 			$.ajax({
 				type: "POST",
 			    url: "sys/login",
@@ -101,7 +103,7 @@ var vm = new Vue({
 			    dataType: "json",
 			    success: function(result){
 					if(result.code == 0){//登录成功
-						parent.location.href ='index.html';
+						parent.location.href ='index';
 					}else{
 						vm.error = true;
 						vm.errorMsg = result.msg;

@@ -9,7 +9,7 @@
         <property name="dataSource" ref="dataSource" />
         <property name="quartzProperties">
             <props>
-                <prop key="org.quartz.scheduler.instanceName">RenrenScheduler</prop>
+                <prop key="org.quartz.scheduler.instanceName">weixinScheduler</prop>
                 <prop key="org.quartz.scheduler.instanceId">AUTO</prop>
                 <!-- 线程池配置 -->
                 <prop key="org.quartz.threadPool.class">org.quartz.simpl.SimpleThreadPool</prop>

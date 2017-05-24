@@ -1,6 +1,6 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: '../sys/generator/list',
+        url: '../../sys/generator/list',
         datatype: "json",
         colModel: [			
 			{ label: '表名', name: 'tableName', width: 100, key: true },
@@ -54,7 +54,7 @@ var vm = new Vue({
 			if(tableNames == null){
 				return ;
 			}
-			location.href = "../sys/generator/code?tables=" + JSON.stringify(tableNames);
+			location.href = "../../sys/generator/code?tables=" + JSON.stringify(tableNames);
 		}
 	}
 });

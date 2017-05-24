@@ -1,7 +1,7 @@
 package com.dmd.weixin.entity;
 
-import io.renren.validator.group.AddGroup;
-import io.renren.validator.group.UpdateGroup;
+import com.dmd.weixin.validator.group.AddGroup;
+import com.dmd.weixin.validator.group.UpdateGroup;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 

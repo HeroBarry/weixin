@@ -1,6 +1,6 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: '../sys/config/list',
+        url: '../../sys/config/list',
         datatype: "json",
         colModel: [			
 			{ label: 'ID', name: 'id', width: 30, key: true },
@@ -60,7 +60,7 @@ var vm = new Vue({
 				return ;
 			}
 			
-			$.get("../sys/config/info/"+id, function(r){
+			$.get("../../sys/config/info/"+id, function(r){
                 vm.showList = false;
                 vm.title = "修改";
                 vm.config = r.config;
@@ -75,7 +75,7 @@ var vm = new Vue({
 			confirm('确定要删除选中的记录？', function(){
 				$.ajax({
 					type: "POST",
-				    url: "../sys/config/delete",
+				    url: "../../sys/config/delete",
 				    data: JSON.stringify(ids),
 				    success: function(r){
 						if(r.code == 0){
@@ -90,7 +90,7 @@ var vm = new Vue({
 			});
 		},
 		saveOrUpdate: function (event) {
-			var url = vm.config.id == null ? "../sys/config/save" : "../sys/config/update";
+			var url = vm.config.id == null ? "../../sys/config/save" : "../../sys/config/update";
 			$.ajax({
 				type: "POST",
 			    url: url,

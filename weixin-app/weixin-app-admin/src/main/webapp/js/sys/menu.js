@@ -1,6 +1,6 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: '../sys/menu/list',
+        url: '../../sys/menu/list',
         datatype: "json",
         colModel: [			
 			{ label: '菜单ID', name: 'menuId', index: "menu_id", width: 40, key: true },
@@ -81,7 +81,7 @@ var vm = new Vue({
 	methods: {
 		getMenu: function(menuId){
 			//加载菜单树
-			$.get("../sys/menu/select", function(r){
+			$.get("../../sys/menu/select", function(r){
 				ztree = $.fn.zTree.init($("#menuTree"), setting, r.menuList);
 				var node = ztree.getNodeByParam("menuId", vm.menu.parentId);
 				ztree.selectNode(node);
@@ -101,7 +101,7 @@ var vm = new Vue({
 				return ;
 			}
 			
-			$.get("../sys/menu/info/"+menuId, function(r){
+			$.get("../../sys/menu/info/"+menuId, function(r){
 				vm.showList = false;
                 vm.title = "修改";
                 vm.menu = r.menu;
@@ -118,7 +118,7 @@ var vm = new Vue({
 			confirm('确定要删除选中的记录？', function(){
 				$.ajax({
 					type: "POST",
-				    url: "../sys/menu/delete",
+				    url: "../../sys/menu/delete",
 				    data: JSON.stringify(menuIds),
 				    success: function(r){
 				    	if(r.code === 0){
@@ -133,7 +133,7 @@ var vm = new Vue({
 			});
 		},
 		saveOrUpdate: function (event) {
-			var url = vm.menu.menuId == null ? "../sys/menu/save" : "../sys/menu/update";
+			var url = vm.menu.menuId == null ? "../../sys/menu/save" : "../../sys/menu/update";
 			$.ajax({
 				type: "POST",
 			    url: url,

@@ -59,8 +59,9 @@
 	<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">
 		<property name="patterns">
 			<list>
-				<value>com.dmd.weixin.app.controller.*</value>
 				<value>com.dmd.weixin.service.*</value>
+				<value>com.dmd.weixin.controller.*</value>
+				<value>com.dmd.weixin.app.controller.*</value>
 			</list>
 		</property>
 	</bean>

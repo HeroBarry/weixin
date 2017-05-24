@@ -34,7 +34,7 @@ var vm = new Vue({
 	data:{
 		user:{},
 		menuList:{},
-		main:"sys/main.html",
+		main:"views/sys/main.html",
 		password:'',
 		newPassword:'',
         navTitle:"控制台"
@@ -103,14 +103,13 @@ function routerList(router, menuList){
 		}else if(menu.type == 1){
 			router.add('#'+menu.url, function() {
 				var url = window.location.hash;
-				
 				//替换iframe的url
 			    vm.main = url.replace('#', '');
 			    
 			    //导航菜单展开
 			    $(".treeview-menu li").removeClass("active");
 			    $("a[href='"+url+"']").parents("li").addClass("active");
-			    
+
 			    vm.navTitle = $("a[href='"+url+"']").text();
 			});
 		}

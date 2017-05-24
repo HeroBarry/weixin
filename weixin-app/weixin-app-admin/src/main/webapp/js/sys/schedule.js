@@ -1,6 +1,6 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: '../sys/schedule/list',
+        url: '../../sys/schedule/list',
         datatype: "json",
         colModel: [			
 			{ label: '任务ID', name: 'jobId', width: 60, key: true },
@@ -67,14 +67,14 @@ var vm = new Vue({
 				return ;
 			}
 			
-			$.get("../sys/schedule/info/"+jobId, function(r){
+			$.get("../../sys/schedule/info/"+jobId, function(r){
 				vm.showList = false;
                 vm.title = "修改";
 				vm.schedule = r.schedule;
 			});
 		},
 		saveOrUpdate: function (event) {
-			var url = vm.schedule.jobId == null ? "../sys/schedule/save" : "../sys/schedule/update";
+			var url = vm.schedule.jobId == null ? "../../sys/schedule/save" : "../../sys/schedule/update";
 			$.ajax({
 				type: "POST",
 			    url: url,
@@ -99,7 +99,7 @@ var vm = new Vue({
 			confirm('确定要删除选中的记录？', function(){
 				$.ajax({
 					type: "POST",
-				    url: "../sys/schedule/delete",
+				    url: "../../sys/schedule/delete",
 				    data: JSON.stringify(jobIds),
 				    success: function(r){
 						if(r.code == 0){
@@ -122,7 +122,7 @@ var vm = new Vue({
 			confirm('确定要暂停选中的记录？', function(){
 				$.ajax({
 					type: "POST",
-				    url: "../sys/schedule/pause",
+				    url: "../../sys/schedule/pause",
 				    data: JSON.stringify(jobIds),
 				    success: function(r){
 						if(r.code == 0){
@@ -145,7 +145,7 @@ var vm = new Vue({
 			confirm('确定要恢复选中的记录？', function(){
 				$.ajax({
 					type: "POST",
-				    url: "../sys/schedule/resume",
+				    url: "../../sys/schedule/resume",
 				    data: JSON.stringify(jobIds),
 				    success: function(r){
 						if(r.code == 0){
@@ -168,7 +168,7 @@ var vm = new Vue({
 			confirm('确定要立即执行选中的记录？', function(){
 				$.ajax({
 					type: "POST",
-				    url: "../sys/schedule/run",
+				    url: "../../sys/schedule/run",
 				    data: JSON.stringify(jobIds),
 				    success: function(r){
 						if(r.code == 0){

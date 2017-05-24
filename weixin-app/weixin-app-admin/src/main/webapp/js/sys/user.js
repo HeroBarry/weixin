@@ -1,6 +1,6 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: '../sys/user/list',
+        url: '../../sys/user/list',
         datatype: "json",
         colModel: [			
 			{ label: '用户ID', name: 'userId', index: "user_id", width: 45, key: true },
@@ -90,7 +90,7 @@ var vm = new Vue({
 			confirm('确定要删除选中的记录？', function(){
 				$.ajax({
 					type: "POST",
-				    url: "../sys/user/delete",
+				    url: "../../sys/user/delete",
 				    data: JSON.stringify(userIds),
 				    success: function(r){
 						if(r.code == 0){
@@ -105,7 +105,7 @@ var vm = new Vue({
 			});
 		},
 		saveOrUpdate: function (event) {
-			var url = vm.user.userId == null ? "../sys/user/save" : "../sys/user/update";
+			var url = vm.user.userId == null ? "../../sys/user/save" : "../../sys/user/update";
 			$.ajax({
 				type: "POST",
 			    url: url,
@@ -122,12 +122,12 @@ var vm = new Vue({
 			});
 		},
 		getUser: function(userId){
-			$.get("../sys/user/info/"+userId, function(r){
+			$.get("../../sys/user/info/"+userId, function(r){
 				vm.user = r.user;
 			});
 		},
 		getRoleList: function(){
-			$.get("../sys/role/select", function(r){
+			$.get("../../sys/role/select", function(r){
 				vm.roleList = r.list;
 			});
 		},

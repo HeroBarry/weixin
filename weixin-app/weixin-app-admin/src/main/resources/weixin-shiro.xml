@@ -28,9 +28,9 @@
 	    <!-- Shiro的核心安全接口,这个属性是必须的 -->  
 	    <property name="securityManager" ref="securityManager"/>  
 	    <!-- 要求登录时的链接(可根据项目的URL进行替换),非必须的属性,默认会自动寻找Web工程根目录下的"/login.html"页面 -->  
-	    <property name="loginUrl" value="/login.html"/>  
+	    <property name="loginUrl" value="/login"/>
 	    <!-- 登录成功后要跳转的连接 -->  
-	    <property name="successUrl" value="/index.html"/>
+	    <property name="successUrl" value="/index"/>
 	    <!-- 用户访问未对其授权的资源时,所显示的连接 -->  
 	    <!-- 若想更明显的测试此属性可以修改它的值,如unauthor.jsp,然后用[玄玉]登录后访问/admin/listUser.jsp就看见浏览器会显示unauthor.jsp -->  
 	    <property name="unauthorizedUrl" value="/"/>  
@@ -41,9 +41,12 @@
 	    <!-- authc：该过滤器下的页面必须验证后才能访问,它是Shiro内置的一个拦截器org.apache.shiro.web.filter.authc.FormAuthenticationFilter -->  
 	    <property name="filterChainDefinitions">  
 	        <value>
-	        	/statics/**=anon
+	        	/vender/**=anon
+				/v2/api-docs=anon
+				/swagger-resources=anon
+				/configuration/**=anon
 				/api/**=anon
-	        	/login.html=anon
+	        	/login=anon
 	        	/sys/login=anon
 	        	/captcha.jpg=anon
 	        	/**=authc

@@ -103,7 +103,7 @@ function routerList(router, menuList){
 		}else if(menu.type == 1){
 			router.add('#'+menu.url, function() {
 				var url = window.location.hash;
-				
+				console.log(url);
 				//替换iframe的url
 			    vm.main = url.replace('#', '');
 			    

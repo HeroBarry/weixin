@@ -1,6 +1,6 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: '../sys/scheduleLog/list',
+        url: '../../sys/scheduleLog/list',
         datatype: "json",
         colModel: [			
             { label: '日志ID', name: 'logId', width: 50, key: true },
@@ -58,7 +58,7 @@ var vm = new Vue({
             }).trigger("reloadGrid");
 		},
 		showError: function(logId) {
-			$.get("../sys/scheduleLog/info/"+logId, function(r){
+			$.get("../../sys/scheduleLog/info/"+logId, function(r){
 				parent.layer.open({
 				  title:'失败信息',
 				  closeBtn:0,

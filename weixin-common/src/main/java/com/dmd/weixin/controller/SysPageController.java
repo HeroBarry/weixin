@@ -13,14 +13,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class SysPageController {
-	
-	@RequestMapping("sys/{url}.html")
-	public String page(@PathVariable("url") String url){
-		return "sys/" + url + ".html";
+
+	@RequestMapping("login")
+	public String login(){
+		return "views/login.html";
 	}
 
-	@RequestMapping("generator/{url}.html")
+	@RequestMapping("index")
+	public String index(){
+		return "views/index.html";
+	}
+
+	@RequestMapping("views/{url}.html")
+	public String views(@PathVariable("url") String url){
+		return url + ".html";
+	}
+
+	@RequestMapping("views/sys/{url}.html")
+	public String sys(@PathVariable("url") String url){
+		return "views/sys/" + url + ".html";
+	}
+
+	@RequestMapping("views/common/{url}.html")
+	public String common(@PathVariable("url") String url){
+		return "views/common/" + url + ".html";
+	}
+
+	@RequestMapping("views/cms/{url}.html")
+	public String cms(@PathVariable("url") String url){
+		return "views/cms/" + url + ".html";
+	}
+
+	@RequestMapping("views/shop/{url}.html")
+	public String shop(@PathVariable("url") String url){
+		return "views/shop/" + url + ".html";
+	}
+
+	@RequestMapping("views/generator/{url}.html")
 	public String generator(@PathVariable("url") String url){
-		return "generator/" + url + ".html";
+		return "views/generator/" + url + ".html";
 	}
 }
