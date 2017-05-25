@@ -1,24 +1,8 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : 192.168.0.122
-Source Server Version : 50619
-Source Host           : 192.168.0.122:3306
-Source Database       : renren-security
-
-Target Server Type    : MYSQL
-Target Server Version : 50619
-File Encoding         : 65001
-
-Date: 2017-05-13 10:12:03
-*/
 
 SET FOREIGN_KEY_CHECKS=0;
 
--- ----------------------------
--- Table structure for qrtz_blob_triggers
--- ----------------------------
- DROP TABLE IF EXISTS `qrtz_blob_triggers`;
+
+DROP TABLE IF EXISTS `qrtz_blob_triggers`;
 DROP TABLE IF EXISTS `qrtz_calendars`;
 DROP TABLE IF EXISTS `qrtz_cron_triggers`;
 DROP TABLE IF EXISTS `qrtz_fired_triggers`;
@@ -30,6 +14,9 @@ DROP TABLE IF EXISTS `qrtz_simprop_triggers`;
 DROP TABLE IF EXISTS `qrtz_triggers`;
 DROP TABLE IF EXISTS `qrtz_job_details`;
 
+-- ----------------------------
+-- Table structure for qrtz_blob_triggers
+-- ----------------------------
 
 CREATE TABLE `qrtz_blob_triggers` (
   `SCHED_NAME` varchar(120) NOT NULL,
